@@ -1,5 +1,8 @@
 package be.ucll.crafsmanship.observer.exercise;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConcreteStock implements Stock {
     private String stockSymbol;
     private double price;
@@ -13,17 +16,19 @@ public class ConcreteStock implements Stock {
 
     @Override
     public void addInvestor(Investor investor) {
-        // TODO: Implement this method
+        investors.add(investor);
     }
 
     @Override
     public void removeInvestor(Investor investor) {
-        // TODO: Implement this method
+        investors.remove(investor);
     }
 
     @Override
     public void notifyInvestors() {
-        // TODO: Implement this method
+        for (Investor investor : investors) {
+            investor.update(this.stockSymbol, this.price);
+        }
     }
 
     public void setPrice(double newPrice) {

@@ -11,5 +11,9 @@ public class Main {
 
         appleStock.setPrice(150.25);
         appleStock.setPrice(150.50);
+
+        appleStock.removeInvestor(john);
+
+        appleStock.setPrice(151.00);
     }
 }
